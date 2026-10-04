@@ -90,7 +90,7 @@ export default function ContactForm() {
               name="name"
               type="text"
               required
-              placeholder="Your name"
+              placeholder="Ramphal"
               className="w-full bg-transparent px-4 py-3 text-sm text-slate-900 dark:text-[#dae2fd] placeholder-slate-400 dark:placeholder-[#64748B] outline-none"
             />
           </div>
@@ -109,7 +109,7 @@ export default function ContactForm() {
               name="email"
               type="email"
               required
-              placeholder="you@example.com"
+              placeholder="ramphal@example.com"
               className="w-full bg-transparent px-4 py-3 text-sm text-slate-900 dark:text-[#dae2fd] placeholder-slate-400 dark:placeholder-[#64748B] outline-none"
             />
           </div>
