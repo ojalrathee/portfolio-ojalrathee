@@ -1,0 +1,97 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        surface: {
+          DEFAULT: '#0b1326',
+          dim: '#0b1326',
+          bright: '#31394d',
+          lowest: '#060e20',
+          low: '#131b2e',
+          DEFAULT_CONTAINER: '#171f33',
+          container: '#171f33',
+          high: '#222a3d',
+          highest: '#2d3449',
+          canvas: {
+            dark: '#0B0F19',
+            light: '#F8FAFC',
+          },
+          panel: {
+            dark: '#111827',
+            light: '#FFFFFF',
+          },
+          elevated: {
+            dark: '#1E293B',
+            light: '#F1F5F9',
+          },
+        },
+        'on-surface': {
+          DEFAULT: '#dae2fd',
+          variant: '#c3c6d7',
+        },
+        primary: {
+          DEFAULT: '#b4c5ff',
+          container: '#2563eb',
+          'on-container': '#eeefff',
+          fixed: '#dbe1ff',
+          'fixed-dim': '#b4c5ff',
+        },
+        secondary: {
+          DEFAULT: '#4edea3',
+          container: '#00a572',
+          fixed: '#6ffbbe',
+        },
+        tertiary: {
+          DEFAULT: '#d0bcff',
+          container: '#7d4ce7',
+          fixed: '#e9ddff',
+        },
+        'azure-vivid': '#3B82F6',
+        'emerald-active': '#10B981',
+        'amber-telemetry': '#F59E0B',
+        'coral-alert': '#EF4444',
+        'terminal-traffic': {
+          red: '#EF4444',
+          amber: '#F59E0B',
+          emerald: '#10B981',
+        },
+        'text-muted': '#64748B',
+        'surface-container-lowest': '#060e20',
+        'surface-container-low': '#131b2e',
+        'surface-container': '#171f33',
+        'surface-container-high': '#222a3d',
+        'surface-container-highest': '#2d3449',
+        'primary-container': '#2563eb',
+        'on-primary-container': '#eeefff',
+        'secondary-container': '#00a572',
+        'tertiary-container': '#7d4ce7',
+        'primary-fixed-dim': '#b4c5ff',
+      },
+      fontFamily: {
+        sans: ['DM Sans', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        mono: ['Space Mono', 'ui-monospace', 'monospace'],
+        display: ['DM Sans', 'sans-serif'],
+        code: ['Space Mono', 'monospace'],
+      },
+      spacing: {
+        gutter: '1.5rem',
+        'space-xs': '0.25rem',
+        'space-sm': '0.5rem',
+        'space-md': '1rem',
+        'space-lg': '1.5rem',
+        'space-xl': '2rem',
+        'space-2xl': '3rem',
+      },
+      boxShadow: {
+        'glow-blue': '0 0 20px rgba(37, 99, 235, 0.35)',
+        'glow-emerald': '0 0 15px rgba(16, 185, 129, 0.4)',
+        'glow-violet': '0 0 15px rgba(125, 76, 231, 0.35)',
+        'console': '0 20px 40px -15px rgba(0, 0, 0, 0.6)',
+      },
+    },
+  },
+  plugins: [],
+};
