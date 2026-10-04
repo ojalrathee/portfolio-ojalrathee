@@ -31,9 +31,9 @@ export default function CertificationsAdminPage() {
       <div className="mt-6 space-y-3">
         {certifications.map((c) => (
           <div key={c.id} className="flex items-center gap-4 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900">
-            <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center overflow-hidden rounded-lg border border-slate-200 bg-slate-100 dark:border-slate-700 dark:bg-slate-800">
+            <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 p-1.5 dark:border-white/[0.08] dark:bg-[#060e20]">
               {c.image_url ? (
-                <img src={c.image_url} alt="" className="h-full w-full object-cover" onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }} />
+                <img src={c.image_url} alt="" className="h-full w-full object-contain rounded-xl" onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }} />
               ) : (
                 <Award size={24} className="text-slate-300 dark:text-slate-600" />
               )}

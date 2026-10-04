@@ -16,11 +16,11 @@ export default function CertificationsSection() {
         {certifications?.map((c) => (
           <div key={c.id} className="flex flex-col rounded-2xl border border-slate-200 bg-slate-50 p-5 transition-colors hover:border-blue-500 dark:border-slate-800 dark:bg-slate-800/50 dark:hover:border-blue-500">
             <div className="mb-4 flex items-start gap-4">
-              <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center overflow-hidden rounded-xl border border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900">
+              <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-slate-200 bg-white p-1.5 dark:border-white/[0.08] dark:bg-[#060e20] shadow-sm">
                 {c.image_url ? (
-                  <img src={c.image_url} alt="" className="h-full w-full object-cover" onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }} />
+                  <img src={c.image_url} alt={c.title} className="h-full w-full object-contain rounded-xl" onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }} />
                 ) : (
-                  <Award size={24} className="text-slate-300 dark:text-slate-600" />
+                  <Award size={24} className="text-[#10B981]" />
                 )}
               </div>
               <div className="min-w-0 flex-1">

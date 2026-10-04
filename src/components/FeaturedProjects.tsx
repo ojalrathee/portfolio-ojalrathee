@@ -473,11 +473,25 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
 }
 
 function CertificationCard({ cert }: { cert: Certification }) {
+  const [imgError, setImgError] = useState(false);
+  const showImage = Boolean(cert.image_url) && !imgError;
+
   return (
     <article className="group flex flex-col rounded-2xl bg-white dark:bg-[#131b2e] border border-slate-200 dark:border-white/[0.06] p-6 shadow-sm dark:shadow-md hover:border-emerald-300 dark:hover:border-[#10B981]/40 transition-all">
       <div className="flex items-start gap-4">
-        <div className="w-12 h-12 rounded-xl bg-emerald-50 dark:bg-[#00a572]/20 border border-emerald-200 dark:border-[#00a572]/30 flex items-center justify-center text-[#10B981] flex-shrink-0 group-hover:scale-105 transition-transform">
-          <ShieldCheck size={24} />
+        <div className="w-14 h-14 rounded-2xl bg-slate-50 dark:bg-[#060e20] border border-slate-200 dark:border-white/[0.08] flex items-center justify-center p-1.5 flex-shrink-0 group-hover:scale-105 transition-transform overflow-hidden shadow-sm">
+          {showImage ? (
+            <img
+              src={cert.image_url!}
+              alt={cert.title}
+              onError={() => setImgError(true)}
+              className="w-full h-full object-contain rounded-xl"
+            />
+          ) : (
+            <div className="w-full h-full rounded-xl bg-emerald-50 dark:bg-[#00a572]/20 border border-emerald-200 dark:border-[#00a572]/30 flex items-center justify-center text-[#10B981]">
+              <ShieldCheck size={24} />
+            </div>
+          )}
         </div>
         <div className="min-w-0 flex-1">
           <span className="font-mono text-[10px] text-[#00a572] dark:text-[#4edea3] font-bold uppercase tracking-wider">
@@ -514,10 +528,24 @@ function CertificationCard({ cert }: { cert: Certification }) {
 }
 
 function BadgeCard({ badge }: { badge: Badge }) {
+  const [imgError, setImgError] = useState(false);
+  const showImage = Boolean(badge.image_url) && !imgError;
+
   return (
     <article className="group flex flex-col items-center text-center rounded-2xl bg-white dark:bg-[#131b2e] border border-slate-200 dark:border-white/[0.06] p-6 shadow-sm dark:shadow-md hover:border-amber-300 dark:hover:border-[#F59E0B]/40 transition-all">
-      <div className="w-16 h-16 rounded-full bg-amber-50 dark:bg-[#F59E0B]/15 border border-amber-200 dark:border-[#F59E0B]/30 flex items-center justify-center text-[#F59E0B] mb-4 group-hover:scale-110 transition-transform">
-        <Award size={30} />
+      <div className="w-20 h-20 rounded-2xl bg-slate-50 dark:bg-[#060e20] border border-slate-200 dark:border-white/[0.08] flex items-center justify-center p-2 mb-4 group-hover:scale-105 transition-transform overflow-hidden shadow-sm">
+        {showImage ? (
+          <img
+            src={badge.image_url!}
+            alt={badge.title}
+            onError={() => setImgError(true)}
+            className="w-full h-full object-contain rounded-xl"
+          />
+        ) : (
+          <div className="w-full h-full rounded-xl bg-amber-50 dark:bg-[#F59E0B]/15 border border-amber-200 dark:border-[#F59E0B]/30 flex items-center justify-center text-[#F59E0B]">
+            <Award size={32} />
+          </div>
+        )}
       </div>
 
       <h3 className="text-sm font-bold text-slate-900 dark:text-[#dae2fd] group-hover:text-[#F59E0B] transition-colors">
