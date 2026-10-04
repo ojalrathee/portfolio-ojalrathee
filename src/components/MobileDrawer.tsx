@@ -79,15 +79,15 @@ export default function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
         </div>
 
         <div className="flex items-center justify-center gap-6 pt-2 font-mono text-xs text-slate-500 dark:text-[#64748B]">
-          <a href="https://github.com/ojalrathee" target="_blank" rel="noopener noreferrer" className="hover:text-slate-900 dark:hover:text-white transition-colors">
+          <a href="https://github.com/ojalrathee" target="_blank" rel="me noopener noreferrer" title="Ojal Rathee on GitHub" className="hover:text-slate-900 dark:hover:text-white transition-colors">
             GitHub
           </a>
           <span>•</span>
-          <a href="https://www.linkedin.com/in/ojalrathee/" target="_blank" rel="noopener noreferrer" className="hover:text-slate-900 dark:hover:text-white transition-colors">
+          <a href="https://www.linkedin.com/in/ojalrathee/" target="_blank" rel="me noopener noreferrer" title="Ojal Rathee on LinkedIn" className="hover:text-slate-900 dark:hover:text-white transition-colors">
             LinkedIn
           </a>
           <span>•</span>
-          <a href="https://x.com/OjalRathee" target="_blank" rel="noopener noreferrer" className="hover:text-slate-900 dark:hover:text-white transition-colors">
+          <a href="https://x.com/OjalRathee" target="_blank" rel="me noopener noreferrer" title="Ojal Rathee on X" className="hover:text-slate-900 dark:hover:text-white transition-colors">
             X
           </a>
         </div>

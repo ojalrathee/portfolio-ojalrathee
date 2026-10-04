@@ -1,10 +1,21 @@
 import { Link } from 'react-router-dom';
 import { Calendar, ArrowRight, ArrowLeft, BookOpen } from 'lucide-react';
 import { useBlogPosts, type BlogPost } from '@/hooks/useBlog';
+import { useSEO } from '@/hooks/useSEO';
 
 export default function BlogPage() {
   const { posts, loading, error } = useBlogPosts();
   const published = posts.filter((p) => p.published);
+
+  useSEO({
+    title: 'Cloud & Engineering Blog | Ojal Rathee (ojalrathee)',
+    description:
+      'Technical publications, AWS serverless tutorials, DevOps automation, and software engineering deep dives by Ojal Rathee on dev.ojalrathee.com.',
+    canonicalPath: '/blog',
+    keywords:
+      'ojalrathee blog, Ojal Rathee articles, cloud tutorials, AWS Lambda architecture, dev.ojalrathee.com',
+  });
+
 
   return (
     <div className="space-y-10 pb-16 transition-colors duration-200">

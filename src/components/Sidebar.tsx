@@ -81,7 +81,9 @@ export default function Sidebar() {
           <a
             href="https://github.com/ojalrathee"
             target="_blank"
-            rel="noopener noreferrer"
+            rel="me noopener noreferrer"
+            title="Ojal Rathee on GitHub"
+            aria-label="Ojal Rathee on GitHub"
             className="hover:text-slate-900 dark:hover:text-white transition-colors"
           >
             GH
@@ -90,7 +92,9 @@ export default function Sidebar() {
           <a
             href="https://www.linkedin.com/in/ojalrathee/"
             target="_blank"
-            rel="noopener noreferrer"
+            rel="me noopener noreferrer"
+            title="Ojal Rathee on LinkedIn"
+            aria-label="Ojal Rathee on LinkedIn"
             className="hover:text-slate-900 dark:hover:text-white transition-colors"
           >
             LI
@@ -99,13 +103,15 @@ export default function Sidebar() {
           <a
             href="https://x.com/OjalRathee"
             target="_blank"
-            rel="noopener noreferrer"
+            rel="me noopener noreferrer"
+            title="Ojal Rathee on X (Twitter)"
+            aria-label="Ojal Rathee on X (Twitter)"
             className="hover:text-slate-900 dark:hover:text-white transition-colors"
           >
             X
           </a>
           <span className="text-slate-300 dark:text-white/10">•</span>
-          <NavLink to="/blog" className="hover:text-slate-900 dark:hover:text-white transition-colors">
+          <NavLink to="/blog" title="RSS & Engineering Logs" className="hover:text-slate-900 dark:hover:text-white transition-colors">
             RSS
           </NavLink>
         </div>

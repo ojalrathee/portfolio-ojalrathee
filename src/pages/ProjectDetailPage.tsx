@@ -11,10 +11,18 @@ import {
 } from 'lucide-react';
 import { useProject, type ArchitectureItem, type ChallengeItem, type DeploymentStep } from '@/hooks/useProjects';
 import { sanitizeHref } from '@/lib/url';
+import { useSEO } from '@/hooks/useSEO';
 
 export default function ProjectDetailPage() {
   const { id } = useParams<{ id: string }>();
   const { project, loading, error } = useProject(id);
+
+  useSEO({
+    title: project ? `${project.title} | Ojal Rathee Projects` : 'Project Details | Ojal Rathee',
+    description: project ? `${project.short_description} Architected by Ojal Rathee (ojalrathee).` : 'Cloud engineering project architecture by Ojal Rathee.',
+    canonicalPath: id ? `/project/${id}` : '/portfolio',
+  });
+
 
   if (loading) {
     return (

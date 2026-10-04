@@ -8,6 +8,7 @@ import {
 } from 'lucide-react';
 import { useResume, RESUME_CATEGORIES, type ResumeCategory, type ResumeEntry } from '@/hooks/useResume';
 import resumePDF from '@/assets/ojal_rathee_resume.pdf';
+import { useSEO } from '@/hooks/useSEO';
 
 const CATEGORY_META: Record<
   ResumeCategory,
@@ -45,6 +46,16 @@ const CATEGORY_META: Record<
 
 export default function ResumePage() {
   const { entries, loading, error } = useResume();
+
+  useSEO({
+    title: 'Resume & Cloud Credentials | Ojal Rathee (ojalrathee)',
+    description:
+      'Official resume, AWS cloud credentials, technical competencies, and software engineering experience of Ojal Rathee (ojalrathee).',
+    canonicalPath: '/resume',
+    keywords:
+      'Ojal Rathee resume, ojalrathee CV, cloud software engineer resume, AWS credentials, dev.ojalrathee.com',
+  });
+
 
   return (
     <div className="space-y-10 pb-16 transition-colors duration-200">

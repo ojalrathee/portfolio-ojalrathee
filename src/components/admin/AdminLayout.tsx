@@ -19,6 +19,7 @@ import {
 } from 'lucide-react';
 import { useAuth } from '@/context/AuthContext';
 import { useTheme } from '@/context/ThemeContext';
+import { useSEO } from '@/hooks/useSEO';
 
 const navItems = [
   { to: '/admin', label: 'Overview', icon: LayoutDashboard, end: true, code: '00' },
@@ -32,6 +33,11 @@ const navItems = [
 ];
 
 export default function AdminLayout() {
+  useSEO({
+    title: 'Admin Console | Ojal Rathee',
+    noindex: true,
+  });
+
   const { user, loading, signOut } = useAuth();
   const { theme, toggleTheme } = useTheme();
   const navigate = useNavigate();
@@ -40,6 +46,7 @@ export default function AdminLayout() {
   useEffect(() => {
     if (!loading && !user) navigate('/signin');
   }, [loading, user, navigate]);
+
 
   if (loading) {
     return (

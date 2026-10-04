@@ -1,5 +1,6 @@
 import { ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useSEO } from '@/hooks/useSEO';
 
 const CONSOLE_COLOR_RAMPS = [
   {
@@ -71,6 +72,13 @@ const CONSOLE_COLOR_RAMPS = [
 ];
 
 export default function DesignPage() {
+  useSEO({
+    title: 'Design System & UI Tokens | Ojal Rathee',
+    description:
+      'Design tokens, color palette, surface hierarchy, and UI telemetry components of the Ojal Rathee (ojalrathee) portfolio system.',
+    canonicalPath: '/design',
+  });
+
   return (
     <div className="space-y-12 pb-16 transition-colors duration-200">
       {/* 1. Header */}

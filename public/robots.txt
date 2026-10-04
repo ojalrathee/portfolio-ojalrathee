@@ -1,0 +1,23 @@
+# Robots.txt for dev.ojalrathee.com - Ojal Rathee Portfolio
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /admin/*
+Disallow: /signin
+
+# Search Engine Crawlers
+User-agent: Googlebot
+Allow: /
+Disallow: /admin
+Disallow: /admin/*
+Disallow: /signin
+
+User-agent: Bingbot
+Allow: /
+Disallow: /admin
+Disallow: /admin/*
+Disallow: /signin
+
+# Canonical host and sitemap
+Host: https://dev.ojalrathee.com
+Sitemap: https://dev.ojalrathee.com/sitemap.xml

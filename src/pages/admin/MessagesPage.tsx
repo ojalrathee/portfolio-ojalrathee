@@ -81,7 +81,7 @@ export default function MessagesPage() {
                 <div className="flex items-start justify-between">
                   <div>
                     <h3 className="text-lg font-bold text-slate-900 dark:text-white">{selected.name}</h3>
-                    <a href={`mailto:${selected.email}`} className="text-sm text-blue-600 hover:underline dark:text-blue-400">{selected.email}</a>
+                    <a href={`mailto:${encodeURIComponent(selected.email.trim())}`} className="text-sm text-blue-600 hover:underline dark:text-blue-400">{selected.email}</a>
                     <p className="mt-1 text-xs text-slate-400">{new Date(selected.created_at).toLocaleString()}</p>
                   </div>
                   <button
@@ -95,7 +95,7 @@ export default function MessagesPage() {
                   <p className="whitespace-pre-wrap text-sm leading-relaxed text-slate-600 dark:text-slate-300">{selected.message}</p>
                 </div>
                 <a
-                  href={`mailto:${selected.email}?subject=Re: Your message&body=Hi ${selected.name},`}
+                  href={`mailto:${encodeURIComponent(selected.email.trim())}?subject=${encodeURIComponent('Re: Your message')}&body=${encodeURIComponent(`Hi ${selected.name.trim()},\n\n`)}`}
                   className="mt-4 inline-flex items-center gap-2 rounded-xl bg-blue-600 px-4 py-2.5 text-sm font-bold text-white transition-colors hover:bg-blue-700"
                 >
                   <Mail size={14} /> Reply

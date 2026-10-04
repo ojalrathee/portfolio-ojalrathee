@@ -9,6 +9,7 @@ import {
   Box,
 } from 'lucide-react';
 import { useProjects } from '@/hooks/useProjects';
+import { useSEO } from '@/hooks/useSEO';
 
 interface HistoryItem {
   id: string;
@@ -20,7 +21,17 @@ export default function TerminalPage() {
   const navigate = useNavigate();
   const { projects } = useProjects();
 
+  useSEO({
+    title: 'Interactive Cloud Terminal & Shell | Ojal Rathee',
+    description:
+      'Interactive browser terminal emulator. Inspect AWS infrastructure, run diagnostics, and navigate projects built by Ojal Rathee (ojalrathee).',
+    canonicalPath: '/terminal',
+    keywords:
+      'ojalrathee terminal, cloud shell emulator, Ojal Rathee interactive terminal, dev.ojalrathee.com',
+  });
+
   const [input, setInput] = useState('');
+
   const [history, setHistory] = useState<HistoryItem[]>([]);
   const [, setCommandHistory] = useState<string[]>([]);
   const [, setHistoryIdx] = useState(-1);

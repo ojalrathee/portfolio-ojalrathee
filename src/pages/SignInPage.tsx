@@ -2,9 +2,16 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Lock, Mail, ArrowLeft, Shield } from 'lucide-react';
 import { useAuth } from '@/context/AuthContext';
+import { useSEO } from '@/hooks/useSEO';
 
 export default function SignInPage() {
+  useSEO({
+    title: 'Sign In | Ojal Rathee Admin',
+    noindex: true,
+  });
+
   const { signIn } = useAuth();
+
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');

@@ -122,7 +122,12 @@ export default function About() {
               <div className="absolute -inset-1 rounded-2xl bg-gradient-to-tr from-[#3B82F6] to-[#10B981] opacity-30 group-hover:opacity-75 blur-sm transition-all duration-500" />
               <img
                 src={profilePhoto}
-                alt="Ojal Rathee"
+                alt="Ojal Rathee (ojalrathee) - Cloud Software Engineer & Systems Architect"
+                title="Ojal Rathee (ojalrathee)"
+                width={112}
+                height={112}
+                fetchPriority="high"
+                loading="eager"
                 className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-2xl object-cover shadow-xl ring-1 ring-slate-200 dark:ring-white/10"
               />
               <div className="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-white dark:bg-[#060e20] flex items-center justify-center shadow-sm">

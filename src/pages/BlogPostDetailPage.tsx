@@ -2,10 +2,18 @@ import { Link, useParams } from 'react-router-dom';
 import { Calendar, ArrowLeft, Tag, BookOpen } from 'lucide-react';
 import { useBlogPost } from '@/hooks/useBlog';
 import MarkdownContent from '@/components/MarkdownContent';
+import { useSEO } from '@/hooks/useSEO';
 
 export default function BlogPostDetailPage() {
   const { slug } = useParams<{ slug: string }>();
   const { post, loading, error } = useBlogPost(slug);
+
+  useSEO({
+    title: post ? `${post.title} | Ojal Rathee Engineering Blog` : 'Article | Ojal Rathee',
+    description: post?.excerpt || 'Technical blog post and architecture writeup by Ojal Rathee (ojalrathee).',
+    canonicalPath: slug ? `/blog/${slug}` : '/blog',
+  });
+
 
   if (loading) {
     return (

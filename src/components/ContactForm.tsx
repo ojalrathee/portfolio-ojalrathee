@@ -25,7 +25,25 @@ export default function ContactForm() {
       ? `[Engagement: ${engagementType}]\n\n${rawMessage}`
       : rawMessage;
 
-    // Enforce rate limiting: max 5 messages per 10 minutes
+    // 1. Strict input validation
+    const EMAIL_REGEX = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!name || name.length > 100) {
+      setStatus('error');
+      setErrorMessage('Name must be between 1 and 100 characters.');
+      return;
+    }
+    if (!email || !EMAIL_REGEX.test(email) || email.length > 255) {
+      setStatus('error');
+      setErrorMessage('Please provide a valid email address.');
+      return;
+    }
+    if (!rawMessage || rawMessage.length < 5 || rawMessage.length > 1000) {
+      setStatus('error');
+      setErrorMessage('Message must be between 5 and 1000 characters.');
+      return;
+    }
+
+    // 2. Enforce rate limiting: max 5 messages per 10 minutes
     const rateCheck = rateLimiter.checkContactSubmit();
     if (!rateCheck.allowed) {
       setStatus('error');
